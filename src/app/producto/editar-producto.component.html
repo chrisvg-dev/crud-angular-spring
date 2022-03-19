@@ -1,0 +1,27 @@
+<div class="container-mt-5" *ngIf="producto">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <input 
+                        type="text" 
+                        placeholder="Ingresa el nombre" 
+                        class="form-control" 
+                        id="nombre"
+                        name="nombre"
+                        [(ngModel)] = "producto.nombre" required>
+                    <input 
+                        type="text" 
+                        placeholder="Ingresa el precio" 
+                        class="form-control" 
+                        id="precio"
+                        name="precio"
+                        [(ngModel)] = "producto.precio" required>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
